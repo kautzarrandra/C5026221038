@@ -1,0 +1,44 @@
+html,
+body {
+  height: 100%;
+  background-color: #f5f5f5;
+}
+
+body {
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: flex;
+  -ms-flex-pack: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  font-family: "Nunito";
+  background:url(../img1/bg-image.png) no-repeat;
+  background-size: contain;
+}
+
+.masthead-brand {
+  float: right;
+}
+
+.fw-800 {
+  font-weight: 800;
+  font-size: 300%;
+}
+
+.fw-700 {
+  font-weight: 700;
+}
+
+.fw-500 {
+  font-weight: 500;
+}
+
+li {
+  list-style-type: none;
+}
+
+.icon-star {
+  display:inline-block;
+  width: 45px;
+  height: 45px;
+}

@@ -1,0 +1,136 @@
+body {
+    font-family: 'Karla', sans-serif;
+    background-image: linear-gradient(white, #FBDFE5);
+}
+
+.header-randra {
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-container-randra {
+    width: 50vw;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+.buttongeneral-randra {
+    background-color: rgb(243, 243, 243);
+    color: black;
+    border-radius: 30px;
+    font-size: 16px;
+    align-items: center;
+}
+
+.titikTiga-randra {
+    height: 40px;
+    width: 40px;
+}
+
+/* Style for the Subscribe button */
+.subscribe-button {
+    height: 40px;
+    width: 130px;
+}
+
+.tombolSubscribe {
+    height: 40px;
+    width: 130px;
+    background-color: green;
+    border-radius: 50%;
+}
+
+/* Reset some default button styles */
+button {
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 0;
+    background: none;
+}
+
+.image-round-randra{
+    border-radius: 50%;
+    width: 96px;
+    height: 96px;
+}
+.logo-randra{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom:40px;
+}
+
+.title-randra {
+    font-size: 20px;
+    margin: 2px;
+    margin-top: 10px;
+}
+
+.subtitle-randra {
+    font-size: 16px;
+    margin: 2px;
+    color: #333333;
+    font: inherit;
+}
+
+.button-container-randra {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button-custom-randra {
+    height: 56px;
+    width: 50vw;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 30px;
+    background-color: white;
+}
+
+.button-thumbnail-randra {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    margin-left: 5px;
+}
+
+.button-title-randra {
+    color: #888888;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+.button-element-container-randra {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.bg-white-randra {
+    background-color: white;
+    border: #fff;
+    color: grey;
+}
+
+.footer-randra {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+}
+
+.footer-logo-randra {
+    margin: 20px;
+    align-items: center;
+    height: 50px;
+    padding: 8px;
+    margin-bottom: 50px;
+}
