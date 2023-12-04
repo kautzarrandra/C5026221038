@@ -1,43 +1,45 @@
 @extends('master2')
-@section('judulhalaman', 'Data Pegawai')
+@section('judulhalaman', 'Data Nilai')
 
 @section('konten')
     <br>
-    <h3>Data Pegawai</h3>
+    <h3>Data Nilai Kuliah</h3>
 
-    <a href="/pegawai/tambah" class="btn btn-primary"> + Tambah Pegawai Baru</a>
+    <a href="/nilai/add" class="btn btn-primary"> + Tambah Nilai</a>
     <br>
-    <br>
-    <p>Cari Data Pegawai :</p>
-    <form action="/pegawai/cari" method="GET">
-	    <input class="form-control" type="text" name="cari" placeholder="Cari Nama Pegawai" value="{{ old('cari', isset($cari) ? $cari : '') }}">
-	    <input type="submit" value="CARI" class="btn btn-info">
-    </form>
-
     <br>
 
     <table class="table table-stripped table-hover">
         <tr>
-            <th>Nama</th>
-            <th>Jabatan</th>
-            <th>Umur</th>
-            <th>Alamat</th>
-            <th>Opsi</th>
+            <th>ID</th>
+            <th>NRP</th>
+            <th>Nilai Angka</th>
+            <th>SKS</th>
+            <th>Nilai Huruf</th>
+            <th>Bobot</th>
         </tr>
-        @foreach($pegawai as $p)
+        @foreach($nilaikuliah as $n)
         <tr>
-            <td>{{ $p->pegawai_nama }}</td>
-            <td>{{ $p->pegawai_jabatan }}</td>
-            <td>{{ $p->pegawai_umur }}</td>
-            <td>{{ $p->pegawai_alamat }}</td>
+            <td>{{ $n->ID }}</td>
+            <td>{{ $n->NRP }}</td>
+            <td>{{ $n->NilaiAngka }}</td>
+            <td>{{ $n->SKS }}</td>
             <td>
-                <a href="/pegawai/edit/{{ $p->pegawai_id }}" class="btn btn-warning">Edit</a>
-                <a href="/pegawai/hapus/{{ $p->pegawai_id }} " class="btn btn-danger">Hapus</a>
+                @if ($n->NilaiAngka <= 40)
+                D
+                @elseif ($n->NilaiAngka >= 41 && $n->NilaiAngka <= 60)
+                C
+                @elseif ($n->NilaiAngka >= 61 && $n->NilaiAngka <= 80)
+                B
+                @elseif ($n->NilaiAngka >= 81)
+                A
+                @endif
+            </td>
+            <td>
+                {{$n->NilaiAngka*$n->SKS}}
             </td>
         </tr>
         @endforeach
     </table>
-
-    {{ $pegawai->links() }}
 
 @endsection
