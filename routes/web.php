@@ -80,7 +80,7 @@ Route::get('/blog/kontak', function () {
     return view('kontak');
 });
 
-//route CRUD
+//route CRUD pegawai
 Route::get('/pegawai','App\Http\Controllers\PegawaiController@index');
 Route::get('/pegawai/tambah','App\Http\Controllers\PegawaiController@tambah');
 Route::post('/pegawai/store','App\Http\Controllers\PegawaiController@store');
@@ -88,9 +88,15 @@ Route::get('/pegawai/edit/{id}','App\Http\Controllers\PegawaiController@edit');
 Route::get('/pegawai/view/{id}','App\Http\Controllers\PegawaiController@view');
 Route::post('/pegawai/update','App\Http\Controllers\PegawaiController@update');
 Route::get('/pegawai/hapus/{id}','App\Http\Controllers\PegawaiController@hapus');
-
 Route::get('/pegawai/cari','App\Http\Controllers\PegawaiController@cari');
 
+//route CRUD nilaikuliah
 Route::get('/nilai','App\Http\Controllers\NilaiController@index');
 Route::get('/nilai/add','App\Http\Controllers\NilaiController@tambah');
 Route::post('/nilai/store','App\Http\Controllers\NilaiController@store');
+
+//route CRUD keranjangbelanja
+Route::get('/keranjangbelanja','App\Http\Controllers\KeranjangController@index');
+Route::get('/keranjangbelanja/beli','App\Http\Controllers\KeranjangController@beli');
+Route::post('/keranjangbelanja/store','App\Http\Controllers\KeranjangController@store');
+Route::get('/keranjangbelanja/hapus/{id}','App\Http\Controllers\KeranjangController@hapus');

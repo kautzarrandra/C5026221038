@@ -18,28 +18,28 @@
                 <div class="form-group row">
                     <label for="nama" class="col-sm-2 control-label">Nama</label>
                     <div class="col-sm-8">
-                        {{ $p->pegawai_nama }}
+                        : {{ $p->pegawai_nama }}
                     </div>
                 </div>
                 {{-- Jabatan --}}
                 <div class="form-group row">
                     <label for="jabatan" class="col-sm-2 control-label">Jabatan</label>
                     <div class="col-sm-8">
-                        {{ $p->pegawai_jabatan }}
+                        : {{ $p->pegawai_jabatan }}
                     </div>
                 </div>
                 {{-- Umur --}}
                 <div class="form-group row">
                     <label for="umur" class="col-sm-2 control-label">Umur</label>
                     <div class="col-sm-8">
-                        {{ $p->pegawai_umur }}
+                        : {{ $p->pegawai_umur }}
                     </div>
                 </div>
                 {{-- Alamat --}}
                 <div class="form-group row">
                     <label for="alamat" class="col-sm-2 control-label">Alamat</label>
                     <div class="col-sm-8">
-                        {{ $p->pegawai_alamat }}
+                        : {{ $p->pegawai_alamat }}
                     </div>
                 </div>
 

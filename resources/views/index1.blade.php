@@ -1,44 +1,45 @@
 @extends('master2')
-@section('judulhalaman', 'Data Pegawai')
+@section('judulhalaman', 'Data Nilai')
 
 @section('konten')
     <br>
-    <h3>Data Pegawai</h3>
+    <h3>Data Nilai Kuliah</h3>
 
-    <a href="/pegawai/tambah" class="btn btn-primary"> + Tambah Pegawai Baru</a>
+    <a href="/nilai/add" class="btn btn-primary"> + Tambah Data</a>
     <br>
-    <br>
-    <p>Cari Data Pegawai :</p>
-    <form action="/pegawai/cari" method="GET">
-	    <input class="form-control" type="text" name="cari" placeholder="Cari Nama Pegawai" value="{{ old('cari', isset($cari) ? $cari : '') }}">
-	    <input type="submit" value="CARI" class="btn btn-info">
-    </form>
-
     <br>
 
     <table class="table table-stripped table-hover">
         <tr>
-            <th>Nama</th>
-            <th>Jabatan</th>
-            <th>Umur</th>
-            <th>Alamat</th>
-            <th>Opsi</th>
+            <th>ID</th>
+            <th>NRP</th>
+            <th>Nilai Angka</th>
+            <th>SKS</th>
+            <th>Nilai Huruf</th>
+            <th>Bobot</th>
         </tr>
-        @foreach($pegawai as $p)
+        @foreach($nilaikuliah as $nk)
         <tr>
-            <td>{{ $p->pegawai_nama }}</td>
-            <td>{{ $p->pegawai_jabatan }}</td>
-            <td>{{ $p->pegawai_umur }}</td>
-            <td>{{ $p->pegawai_alamat }}</td>
+            <td>{{ $nk->ID }}</td>
+            <td>{{ $nk->NRP }}</td>
+            <td>{{ $nk->NilaiAngka }}</td>
+            <td>{{ $nk->SKS }}</td>
             <td>
-                <a href="/pegawai/view/{{ $p->pegawai_id }}" class="btn btn-success">View</a>
-                <a href="/pegawai/edit/{{ $p->pegawai_id }}" class="btn btn-warning">Edit</a>
-                <a href="/pegawai/hapus/{{ $p->pegawai_id }} " class="btn btn-danger">Hapus</a>
+                @if ($nk->NilaiAngka <= 40)
+                D
+                @elseif ($nk->NilaiAngka >= 41 && $nk->NilaiAngka <= 60)
+                C
+                @elseif ($nk->NilaiAngka >= 61 && $nk->NilaiAngka <= 80)
+                B
+                @elseif ($nk->NilaiAngka >= 81)
+                A
+                @endif
+            </td>
+            <td>
+                {{$nk->NilaiAngka*$nk->SKS}}
             </td>
         </tr>
         @endforeach
     </table>
-
-    {{ $pegawai->links() }}
 
 @endsection

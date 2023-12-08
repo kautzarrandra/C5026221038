@@ -1,45 +1,48 @@
 @extends('master2')
-@section('judulhalaman', 'Data Nilai')
+@section('judulhalaman', 'Data Pegawai')
 
 @section('konten')
     <br>
-    <h3>Data Nilai Kuliah</h3>
+    <h3>Data Pegawai</h3>
 
-    <a href="/nilai/add" class="btn btn-primary"> + Tambah Nilai</a>
+    <a href="/pegawai/tambah" class="btn btn-primary"> + Tambah Pegawai Baru</a>
     <br>
+    <br>
+    <p>Cari Data Pegawai :</p>
+    <form action="/pegawai/cari" method="GET">
+	    <input class="form-control" type="text" name="cari" placeholder="Cari Nama Pegawai" value="{{ old('cari', isset($cari) ? $cari : '') }}">
+	    <input type="submit" value="CARI" class="btn btn-info">
+    </form>
+
     <br>
 
     <table class="table table-stripped table-hover">
         <tr>
-            <th>ID</th>
-            <th>NRP</th>
-            <th>Nilai Angka</th>
-            <th>SKS</th>
-            <th>Nilai Huruf</th>
-            <th>Bobot</th>
+            <th>Nama</th>
+            <th>Jabatan</th>
+            <th>Umur</th>
+            <th>Alamat</th>
+            <th>Opsi</th>
         </tr>
-        @foreach($nilaikuliah as $n)
+        @foreach($pegawai as $p)
         <tr>
-            <td>{{ $n->ID }}</td>
-            <td>{{ $n->NRP }}</td>
-            <td>{{ $n->NilaiAngka }}</td>
-            <td>{{ $n->SKS }}</td>
+            <td>{{ $p->pegawai_nama }}</td>
+            <td>{{ $p->pegawai_jabatan }}</td>
+            @if($p->pegawai_umur > 30)
+                <td style="background-color: rgb(218, 27, 27); color: white;">{{ $p->pegawai_umur }}</td>
+            @else
+                <td style="background-color: rgb(14, 14, 14); color: white;">{{ $p->pegawai_umur }}</td>
+            @endif
+            <td>{{ $p->pegawai_alamat }}</td>
             <td>
-                @if ($n->NilaiAngka <= 40)
-                D
-                @elseif ($n->NilaiAngka >= 41 && $n->NilaiAngka <= 60)
-                C
-                @elseif ($n->NilaiAngka >= 61 && $n->NilaiAngka <= 80)
-                B
-                @elseif ($n->NilaiAngka >= 81)
-                A
-                @endif
-            </td>
-            <td>
-                {{$n->NilaiAngka*$n->SKS}}
+                <a href="/pegawai/view/{{ $p->pegawai_id }}" class="btn btn-success">View</a>
+                <a href="/pegawai/edit/{{ $p->pegawai_id }}" class="btn btn-warning">Edit</a>
+                <a href="/pegawai/hapus/{{ $p->pegawai_id }} " class="btn btn-danger" onclick="return confirm('Are you sure?')">Hapus</a>
             </td>
         </tr>
         @endforeach
     </table>
+
+    {{ $pegawai->links() }}
 
 @endsection

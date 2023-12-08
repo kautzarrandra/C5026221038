@@ -14,7 +14,7 @@ class NilaiController extends Controller
 		// $pegawai = DB::table('nilaikuliah')->get();
         $nilaikuliah = DB::table('nilaikuliah')->get();
     	// mengirim data pegawai ke view index
-		return view('index',['nilaikuliah' => $nilaikuliah]);
+		return view('index1',['nilaikuliah' => $nilaikuliah]);
 
 	}
 
@@ -32,6 +32,7 @@ class NilaiController extends Controller
 	{
 		// insert data ke table nilaikuliah
 		DB::table('nilaikuliah')->insert([
+            'ID' => $request->id,
 			'NRP' => $request->nrp,
 			'NilaiAngka' => $request->nilaiangka,
 			'SKS' => $request->sks
@@ -41,13 +42,4 @@ class NilaiController extends Controller
 
 	}
 
-    // method untuk lihat data nilaikuliah
-	public function view($id)
-	{
-		// mengambil data nilaikuliah berdasarkan id yang dipilih
-		$nilaikuliah = DB::table('nilaikuliah')->where('ID',$id)->get();
-		// passing data pegawai yang didapat ke view edit.blade.php
-		return view('lihat',['nilaikuliah' => $nilaikuliah]);
-
-	}
 }

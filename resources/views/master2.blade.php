@@ -13,15 +13,15 @@
 
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
         <!-- Brand -->
-        <a class="navbar-brand" href="#">5026221038 Kautzar Randra N. K.</a>
+        <a class="navbar-brand" href="/">5026221038 Kautzar Randra N. K.</a>
 
         <!-- Links -->
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link" href="#">Link 1</a>
+            <a class="nav-link" href="/nilai">Nilai Kuliah</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Link 2</a>
+            <a class="nav-link" href="/keranjangbelanja">Keranjang Belanja</a>
           </li>
 
           <!-- Dropdown -->
