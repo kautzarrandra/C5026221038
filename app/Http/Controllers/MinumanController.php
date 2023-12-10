@@ -11,7 +11,7 @@ class MinumanController extends Controller
 	public function index()
 	{
     	// mengambil data dari table minuman
-        $minuman = DB::table('minuman')->get();
+        $minuman = DB::table('minuman')->paginate(5);
     	// mengirim data minuman ke view index
 		return view('index3',['minuman' => $minuman]);
 
