@@ -24,7 +24,7 @@
                 <td>{{ number_format($p->Harga, 2, ',', '.') }}</td>
                 <td>{{ number_format($p->Harga * $p->Jumlah, 2, ',', '.') }}</td>
                 <td>
-                    <a href="/keranjangbelanja/hapus/{{ $p->ID }}" class="btn btn-danger">Hapus</a>
+                    <a href="/keranjangbelanja/hapus/{{ $p->ID }}" class="btn btn-danger" onclick="return confirm('Apakah kamu yakin?')">Hapus</a>
                 </td>
             </tr>
         @endforeach

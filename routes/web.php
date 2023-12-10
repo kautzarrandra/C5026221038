@@ -100,3 +100,12 @@ Route::get('/keranjangbelanja','App\Http\Controllers\KeranjangController@index')
 Route::get('/keranjangbelanja/beli','App\Http\Controllers\KeranjangController@beli');
 Route::post('/keranjangbelanja/store','App\Http\Controllers\KeranjangController@store');
 Route::get('/keranjangbelanja/hapus/{id}','App\Http\Controllers\KeranjangController@hapus');
+
+//route CRUD minuman
+Route::get('/minuman','App\Http\Controllers\MinumanController@index');
+Route::get('/minuman/tambah','App\Http\Controllers\MinumanController@tambah');
+Route::post('/minuman/store','App\Http\Controllers\MinumanController@store');
+Route::get('/minuman/edit/{id}','App\Http\Controllers\MinumanController@edit');
+Route::post('/minuman/update','App\Http\Controllers\MinumanController@update');
+Route::get('/minuman/hapus/{id}','App\Http\Controllers\MinumanController@hapus');
+Route::get('/minuman/cari','App\Http\Controllers\MinumanController@cari');
