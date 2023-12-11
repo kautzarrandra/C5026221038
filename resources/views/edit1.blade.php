@@ -28,13 +28,6 @@
                 <input type="text" required="required" id="stock" name="stock" class="form-control" value="{{ $m->stockminuman }}">
             </div>
         </div>
-        {{-- Tersedia --}}
-        <div class="form-group row">
-            <label for="tersedia" class="col-sm-2 control-label">Tersedia</label>
-            <div class="col-sm-8">
-                <input type="text" required="required" id="tersedia" name="tersedia" class="form-control" value="{{ $m->tersedia }}">
-            </div>
-        </div>
 
 		<input class="btn btn-primary" type="submit" value="Simpan Data">
 	</form>

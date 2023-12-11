@@ -34,7 +34,7 @@ class MinumanController extends Controller
 			'kodeminuman' => $request->kode,
 			'merkminuman' => $request->merk,
 			'stockminuman' => $request->stock,
-			'tersedia' => $request->tersedia
+			'tersedia' => $request->stock > 0 ? 'Y' : 'N'
 		]);
 		// alihkan halaman ke halaman minuman
 		return redirect('/minuman');
@@ -58,7 +58,7 @@ class MinumanController extends Controller
 		DB::table('minuman')->where('kodeminuman',$request->id)->update([
 			'merkminuman' => $request->merk,
 			'stockminuman' => $request->stock,
-			'tersedia' => $request->tersedia
+			'tersedia' => $request->stock > 0 ? 'Y' : 'N'
 		]);
 		// alihkan halaman ke halaman minuman
 		return redirect('/minuman');

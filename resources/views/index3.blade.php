@@ -29,7 +29,11 @@
                 <td>{{ $m->kodeminuman }}</td>
                 <td>{{ $m->merkminuman }}</td>
                 <td>{{ $m->stockminuman }}</td>
-                <td>{{ $m->tersedia }}</td>
+                <td>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" style="width:30px;height:30px" disabled value="" {{$m->tersedia == 'Y' ? 'checked' : ''}} id="flexCheckDefault">
+                    </div>
+                </td>
                 <td>
                     <a href="/minuman/edit/{{ $m->kodeminuman }}" class="btn btn-warning">Edit</a>
                     <a href="/minuman/hapus/{{ $m->kodeminuman }}" class="btn btn-danger" onclick="return confirm('Apakah kamu yakin?')">Hapus</a>

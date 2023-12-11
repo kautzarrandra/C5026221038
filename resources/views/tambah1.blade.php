@@ -26,13 +26,6 @@
                 <input type="text" class="form-control" id="stock" name="stock" required="required" placeholder="Masukkan Stok Minuman">
             </div>
         </div>
-        {{-- Stok --}}
-        <div class="form-group row">
-            <label for="tersedia" class="col-sm-2 control-label">Tersedia</label>
-            <div class="col-sm-8">
-                <input type="text" class="form-control" id="tersedia" name="tersedia" required="required" placeholder="Y / N">
-            </div>
-        </div>
 
 		<input class="btn btn-primary" type="submit" value="Simpan Data">
 	</form>
